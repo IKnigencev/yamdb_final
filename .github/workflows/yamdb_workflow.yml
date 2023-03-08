@@ -1,0 +1,16 @@
+name: yamdb_final workflow
+
+on: [push]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    run: |
+      python -m flake8
+      pytest
+  build:
+    runs-on: ubuntu-latest
+    run: |
+      docker-compose up --build
+      
+    
