@@ -64,7 +64,7 @@ class SignUpSerializer(serializers.Serializer):
         if value == 'me':
             raise serializers.ValidationError(
                 'Нельзя использовать username me')
-        elif bool(re.search(r'^[\w.@+-]+\Z', value)):
+        if bool(re.search(r'^[\w.@+-]+\Z', value)):
             return value
         raise serializers.ValidationError(
             'Не верный формат username'
