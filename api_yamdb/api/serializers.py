@@ -1,10 +1,10 @@
 import re
 
+from django.db.models import Avg
 from django.core.exceptions import ValidationError
 from rest_framework import serializers
 from rest_framework.relations import SlugRelatedField
 from rest_framework.validators import UniqueValidator
-from django.db.models import Avg
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from reviews.models import User, Category, Genre, Title, Comment, Review
