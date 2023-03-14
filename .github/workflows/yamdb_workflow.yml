@@ -38,6 +38,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
+          context: ./api_yamdb/
           tags: knigencev/yamdb_final:latest
   deploy:
     runs-on: ubuntu-latest
