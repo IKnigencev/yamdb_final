@@ -11,7 +11,11 @@ services:
     image: knigencev/yamdb_final:latest
     restart: always
     volumes:
-      - static_value:/app/static/
+      - type: volume
+        source: static_value
+        target: /app/static
+        volume:
+          nocopy: false
       - media_value:/app/media/
     depends_on:
       - db
